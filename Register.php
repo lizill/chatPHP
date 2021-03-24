@@ -6,7 +6,7 @@
     $userName = $_POST["userName"];
 
     $statement = mysqli_prepare($con, "INSERT INTO user VALUE (?, ?, ?)");
-    mysqli_stmt_bind_param($statement, "sssi", $userID, $userPassword, $userName);
+    mysqli_stmt_bind_param($statement, "sss", $userID, $userPassword, $userName);
     mysqli_stmt_execute($statement);
 
     $response = array();
