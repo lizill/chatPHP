@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost", "root", "ajdcjddl1!", "chatdb");
+    $con = mysqli_connect("localhost", "chatdbmaster", "chatdbmaster", "chatdb");
 
     $userID = $_POST["userID"];
     $userPassword = $_POST["userPassword"];
