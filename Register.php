@@ -3,10 +3,9 @@
 
     $userID = $_POST["userID"];
     $userPassword = $_POST["userPassword"];
-    $userName = $_POST["userName"];
 
-    $statement = mysqli_prepare($con, "INSERT INTO user VALUE (?, ?, ?)");
-    mysqli_stmt_bind_param($statement, "sss", $userID, $userPassword, $userName);
+    $statement = mysqli_prepare($con, "INSERT INTO user VALUE (?, ?)");
+    mysqli_stmt_bind_param($statement, "ss", $userID, $userPassword);
     mysqli_stmt_execute($statement);
 
     $response = array();
