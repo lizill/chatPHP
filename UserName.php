@@ -1,11 +1,11 @@
 <?php
     $con = mysqli_connect("localhost", "chatdbmaster", "chatdbmaster", "chatdb");
 
+    $userName = $_POST["userName"];
     $userID = $_POST["userID"];
-    $userPassword = $_POST["userPassword"];
 
-    $statement = mysqli_prepare($con, "INSERT INTO user(userID, userPassword) VALUES (?, ?)");
-    mysqli_stmt_bind_param($statement, "ss", $userID, $userPassword);
+    $statement = mysqli_prepare($con, "UPDATE user SET userName=? WHERE userID=?");
+    mysqli_stmt_bind_param($statement, "ss", $userName, $userID);
     mysqli_stmt_execute($statement);
 
     $response = array();
